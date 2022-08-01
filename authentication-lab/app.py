@@ -66,11 +66,11 @@ def add_tweet():
 		db.child("articles").push(tweet)
 	return render_template("add_tweet.html")
 
-@app.route('/all_tweets', methods=['GET', 'POST'])
+@app.route('/tweets', methods=['GET', 'POST'])
 def all_tweet():
-	tweets = dict(db.child("tweets").get().val())
+	tweets = db.child("articles").get().val()
 
-	return render_template("tweets.html")
+	return render_template("tweets.html", tweets= tweets)
 
 
 if __name__ == '__main__':

@@ -5,7 +5,9 @@
 </head>
 <body>
 {% for tweet in tweets %}
- <li> {{tweet}} </li>
+ <li> {{tweets[tweet]["title"]}} </li>
+ <li> {{tweets[tweet]["bio"]}} </li>
+ <br>
 {%endfor%}
 
 </body>
